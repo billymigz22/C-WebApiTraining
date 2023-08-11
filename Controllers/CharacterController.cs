@@ -1,12 +1,14 @@
 ﻿using C_WebApiTraining.Dtos.Character;
 using C_WebApiTraining.Services.CharacterService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace C_WebApiTraining.Controllers
 {
-    [Route("api/[controller]")] // Where we will find the controller
+    [Authorize]
     [ApiController] // Indicates all type are HTTP responses
+    [Route("api/[controller]")] // Where we will find the controller
     public class CharacterController : ControllerBase
     {
         private readonly ICharacterService _characterService;
