@@ -11,5 +11,7 @@
         public RpgClass Class { get; set; } = RpgClass.Knight;
         public bool IsDeleted { get; set; } = false;
         public DateTime DateCreated { get; set; }
+
+        public User? User { get; set; }
     }
 }
