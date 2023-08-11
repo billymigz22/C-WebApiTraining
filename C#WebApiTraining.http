@@ -7,3 +7,15 @@ GET {{C#WebApiTraining_HostAddress}}/api/character/GetAll
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
+
+POST {{C#WebApiTraining_HostAddress}}/weapon
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Sword",
+  "damage": 10,
+  "characterId": 1
+}
+
+###

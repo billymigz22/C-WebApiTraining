@@ -1,4 +1,7 @@
-﻿namespace C_WebApiTraining.Dtos.Character
+﻿using C_WebApiTraining.Dtos.Skill;
+using C_WebApiTraining.Dtos.Weapon;
+
+namespace C_WebApiTraining.Dtos.Character
 {
     public class GetCharacterDto
     {
@@ -9,5 +12,7 @@
         public int Defense { get; set; } = 10;
         public int Intelligence { get; set; } = 10;
         public RpgClass Class { get; set; } = RpgClass.Knight;
+        public GetWeaponDto Weapon { get; set; }
+        public List<GetSkillDto> Skills { get; set; }
     }
 }
