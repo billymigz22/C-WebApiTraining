@@ -13,9 +13,9 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "name": "Sword",
-  "damage": 10,
-  "characterId": 1
+  "name": "Mace",
+  "damage": 15,
+  "characterId": 2
 }
 
 ###
@@ -25,8 +25,23 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "characterId": 1,
-  "skillId": 1
+  "characterId": 2,
+  "skillId": 2
+}
+
+###
+
+POST {{C#WebApiTraining_HostAddress}}/api/character
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Sam",
+  "hitPoints": 100,
+  "strength": 10,
+  "defense": 10,
+  "intelligence": 10,
+  "class": "Mage"
 }
 
 ###
