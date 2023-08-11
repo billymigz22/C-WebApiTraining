@@ -19,3 +19,14 @@ Content-Type: application/json
 }
 
 ###
+
+POST {{C#WebApiTraining_HostAddress}}/api/character/Skill
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "characterId": 1,
+  "skillId": 1
+}
+
+###
