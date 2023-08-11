@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using C_WebApiTraining.Services.CharacterService;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace C_WebApiTraining.Controllers
@@ -7,28 +8,29 @@ namespace C_WebApiTraining.Controllers
     [ApiController] // Indicates all type are HTTP responses
     public class CharacterController : ControllerBase
     {
-        private static List<Character> characters = new List<Character> {
-            new Character(),
-            new Character { Id = 1, Name = "Sam" }
-        };
+        private readonly ICharacterService _characterService;
+
+        public CharacterController(ICharacterService characterService)
+        {
+            _characterService = characterService;
+        }
 
         [HttpGet("GetAll")]
-        public ActionResult<List<Character>> Get()
+        public async Task<ActionResult<List<Character>>> Get()
         {
-            return Ok(characters);
+            return Ok(await _characterService.GetAllCharacters());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Character> GetSingle(int id)
+        public async Task<ActionResult<Character>> GetSingle(int id)
         {
-            return Ok(characters.FirstOrDefault(c => c.Id == id));
+            return Ok(await _characterService.GetCharacterById(id));
         }
 
         [HttpPost]
-        public ActionResult<List<Character>> AddCharacter(Character character)
+        public async Task<ActionResult<List<Character>>> AddCharacter(Character newCharacter)
         {
-            characters.Add(character);
-            return Ok(characters);
+            return Ok(await _characterService.AddCharacter(newCharacter));
         }
 
     }
