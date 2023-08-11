@@ -1,0 +1,9 @@
+﻿@C#WebApiTraining_HostAddress = https://localhost:7004
+@token = eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsIm5iZiI6MTY5MTc0MDgwOSwiZXhwIjoxNjkxODI3MjA5LCJpYXQiOjE2OTE3NDA4MDl9.85ZqQUpiqmvPrVvs7DYXbksVTugTt5PsuJs-Jfx3hoJxnpNhgQrxz7CsiEhoO1C5vn_L7cvG5jhacdazYLltVQ
+
+
+
+GET {{C#WebApiTraining_HostAddress}}/api/character/GetAll
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###

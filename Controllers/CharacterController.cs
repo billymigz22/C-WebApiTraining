@@ -3,6 +3,7 @@ using C_WebApiTraining.Services.CharacterService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace C_WebApiTraining.Controllers
 {
@@ -21,6 +22,8 @@ namespace C_WebApiTraining.Controllers
         [HttpGet("GetAll")]
         public async Task<ActionResult<ServiceResponse<List<GetCharacterDto>>>> Get()
         {
+            //int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
+            //return Ok(await _characterService.GetAllCharacters(userId));
             return Ok(await _characterService.GetAllCharacters());
         }
 
