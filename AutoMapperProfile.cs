@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using C_WebApiTraining.Dtos.Character;
+using C_WebApiTraining.Dtos.Fight;
 using C_WebApiTraining.Dtos.Skill;
 using C_WebApiTraining.Dtos.Weapon;
 
